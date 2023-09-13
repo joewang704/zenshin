@@ -1,44 +1,44 @@
-import { styled } from "@/styled-system/jsx";
+import { styled } from '@/styled-system/jsx'
 
-const Input = styled("input", {
+const Input = styled('input', {
   base: {
     // border
-    borderWidth: "1px",
-    borderStyle: "solid",
-    borderColor: "base",
-    borderRadius: "sm",
+    borderWidth: '1px',
+    borderStyle: 'solid',
+    borderColor: 'base',
+    borderRadius: 'sm',
 
     // layout
-    backgroundColor: "white",
-    padding: "8px",
-    minHeight: "48px",
-    fontSize: "16px",
-    lineHeight: "28px",
+    backgroundColor: 'white',
+    padding: '8px',
+    minHeight: '48px',
+    fontSize: '16px',
+    lineHeight: '28px',
 
     // animations
-    transitionDuration: "0.3s",
+    transitionDuration: '0.3s',
 
     _focus: {
-      outline: "none",
-      boxShadow: "base",
+      outline: 'none',
+      boxShadow: 'base',
     },
   },
   variants: {
     variant: {
       danger: {
-        borderColor: "base.danger",
+        borderColor: 'base.danger',
         _focus: {
-          boxShadow: "base.danger",
+          boxShadow: 'base.danger',
         },
       },
       success: {
-        borderColor: "base.success",
+        borderColor: 'base.success',
         _focus: {
-          boxShadow: "base.success",
+          boxShadow: 'base.success',
         },
       },
     },
   },
-});
+})
 
-export default Input;
+export default Input
