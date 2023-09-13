@@ -10,15 +10,29 @@ export default defineConfig({
     // Files to exclude
     exclude: [],
 
-    // Useful for theme customization
     theme: {
-      extend: {}
+      extend: {
+        tokens: {
+          colors: {
+            base: {
+              DEFAULT: { value: '{colors.stone.200}' },
+              danger: { value: '{colors.red.400}' },
+              success: { value: '{colors.emerald.400}' }
+            },
+          },
+          shadows: {
+            base: {
+              DEFAULT: { value: '{shadows.md}' },
+              danger: { value: '0 4px 6px -1px rgb(255 0 0 / 0.1), 0 2px 4px -2px rgb(255 0 0 / 0.1)'},
+              success: { value: '0 4px 6px -1px rgb(0 128 0 / 0.1), 0 2px 4px -2px rgb(0 128 0 / 0.1)'},
+            }
+          }
+        }
+      }
     },
 
     // The output directory for your css system
     outdir: "styled-system",
 
     jsxFramework: 'react',
-
-
 })
