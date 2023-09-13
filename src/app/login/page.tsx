@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { styled } from '@styled-system/jsx'
 import { css } from '@styled-system/css'
 
@@ -48,20 +49,45 @@ const GoogleIcon = () => (
 const Page = async () => {
   return (
     <>
-      <h1>Sign in</h1>
-      <a href="/login/google">
-        <GoogleLogin>
-          <div
-            className={css({
-              display: 'flex',
-              alignItems: 'center',
-            })}
-          >
-            <GoogleIcon />
-            <div className={css({ ml: 2 })}>Sign in with Google</div>
-          </div>
-        </GoogleLogin>
-      </a>
+      <div
+        className={css({
+          bgColor: '#F1F1F1',
+          height: '100vh',
+          width: '100vw',
+          top: 0,
+          left: 0,
+          position: 'fixed',
+          zIndex: -1,
+        })}
+      >
+        <div
+          className={css({
+            mx: 'auto',
+            display: 'flex',
+            flexDir: 'column',
+            alignItems: 'center',
+            textAlign: 'center',
+            position: 'fixed',
+            top: '40%',
+            width: '100%',
+          })}
+        >
+          <Image src="/logo.svg" alt="logo" width="180" height="64" />
+          <a href="/login/google" className={css({ mt: 6 })}>
+            <GoogleLogin>
+              <div
+                className={css({
+                  display: 'flex',
+                  alignItems: 'center',
+                })}
+              >
+                <GoogleIcon />
+                <div className={css({ ml: 2 })}>Sign in with Google</div>
+              </div>
+            </GoogleLogin>
+          </a>
+        </div>
+      </div>
     </>
   )
 }
