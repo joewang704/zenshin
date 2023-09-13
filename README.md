@@ -2,7 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Initial Setup
 
-Run `vercel env pull .env.development.local` to pull required environment variables from Vercel Postgres into the project
+- Run `vercel env pull .env.development.local` to pull required environment variables from Vercel Postgres into the project
+- Auth credential env vars (GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET, AUTH_URL) must be set after
 
 ## Getting Started
 
