@@ -22,9 +22,13 @@ export const auth = lucia({
   },
 })
 
-const REQUIRED_ENV_VARS = ['GOOGLE_CLIENT_ID', 'GOOGLE_CLIENT_SECRET', 'AUTH_URL']
+const REQUIRED_ENV_VARS = [
+  'GOOGLE_CLIENT_ID',
+  'GOOGLE_CLIENT_SECRET',
+  'AUTH_URL',
+]
 
-REQUIRED_ENV_VARS.forEach(k => {
+REQUIRED_ENV_VARS.forEach((k) => {
   if (!process.env[k]) {
     throw new Error(`Auth initialization failed. ${k} env var not set`)
   }

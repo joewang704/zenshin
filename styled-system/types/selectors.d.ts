@@ -1,5 +1,5 @@
 /* eslint-disable */
-import type {  Pseudos  } from './csstype';
+import type { Pseudos } from './csstype'
 
 type AriaAttributes =
   | '[aria-disabled]'
@@ -55,5 +55,8 @@ type ParentSelector = `${DataAttributes | AriaAttributes} &`
 
 type AtRuleType = 'media' | 'layer' | 'container' | 'supports' | 'page'
 
-export type AnySelector = `${string}&` | `&${string}` | `@${AtRuleType}${string}`
+export type AnySelector =
+  | `${string}&`
+  | `&${string}`
+  | `@${AtRuleType}${string}`
 export type Selectors = AttributeSelector | ParentSelector
