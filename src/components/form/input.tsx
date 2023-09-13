@@ -22,9 +22,17 @@ const Input = styled('input', {
       outline: 'none',
       boxShadow: 'base',
     },
+
+    _disabled: {
+      backgroundColor: 'stone.100',
+    },
+
+    _placeholder: {
+      color: 'stone.300',
+    },
   },
   variants: {
-    variant: {
+    kind: {
       danger: {
         borderColor: 'base.danger',
         _focus: {
