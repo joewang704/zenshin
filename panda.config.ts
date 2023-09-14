@@ -36,6 +36,14 @@ export default defineConfig({
             },
           },
         },
+        fontWeights: {
+          base: {
+            regular: { value: '400' },
+            medium: { value: '500' },
+            semiBold: { value: '600' },
+            bold: { value: '700' },
+          }
+        }
       },
     },
   },

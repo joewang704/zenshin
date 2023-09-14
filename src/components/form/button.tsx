@@ -16,7 +16,7 @@ const Button = styled('button', {
     textAlign: 'center',
     overflow: 'hidden',
     fontSize: '16px',
-    fontWeight: '500',
+    fontWeight: 'base.semiBold',
 
     // color
     backgroundColor: 'stone.900',
