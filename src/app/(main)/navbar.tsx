@@ -7,7 +7,7 @@ import MobileMenu from './mobile_menu'
 
 const DesktopMenu = styled('div', {
   base: {
-    display: { sm: 'none', lg: 'flex' },
+    display: { base: 'none', lg: 'flex' },
     '& div, & input': {
       ml: 10,
       cursor: 'pointer',
