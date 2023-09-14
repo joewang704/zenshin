@@ -26,6 +26,7 @@ const Container = styled('div', {
   base: {
     display: { sm: 'block', lg: 'none' },
     position: 'relative',
+    fontSize: '14px',
   },
 })
 
