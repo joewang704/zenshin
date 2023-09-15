@@ -27,6 +27,7 @@ const Container = styled('div', {
     display: { sm: 'block', lg: 'none' },
     position: 'relative',
     fontSize: '14px',
+    zIndex: 2,
   },
 })
 
@@ -49,6 +50,7 @@ export default function MobileMenu() {
             color: 'neutral.600',
             minWidth: '160px',
             borderRadius: '4px',
+            bgColor: 'white',
             '& div': {
               px: 4,
               py: 3,
