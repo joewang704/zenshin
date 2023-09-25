@@ -72,7 +72,7 @@ const Page = async () => {
             width: '100%',
           })}
         >
-          <Image src="/logo.svg" alt="logo" width="180" height="64" />
+          <Image src="/logo.svg" alt="logo" width="180" height="64" priority />
           <a href="/login/google" className={css({ mt: 6 })}>
             <GoogleLogin>
               <div

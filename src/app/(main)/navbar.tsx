@@ -31,7 +31,7 @@ export default async function Navbar() {
         justifyContent: 'space-between',
       })}
     >
-      <Image src="/logo.svg" alt="logo" width="96" height="32" />
+      <Image src="/logo.svg" alt="logo" width="96" height="32" priority />
       <MobileMenu />
       <DesktopMenu>
         <Link href="/">
