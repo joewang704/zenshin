@@ -18,7 +18,7 @@ const DesktopMenu = styled('div', {
   },
 })
 
-export default async function Navbar() {
+export default function Navbar() {
   return (
     <div
       className={css({

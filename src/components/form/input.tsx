@@ -1,6 +1,7 @@
-import { styled } from '@/styled-system/jsx'
+import { cva } from '@styled-system/css'
+import { styled } from '@styled-system/jsx'
 
-const Input = styled('input', {
+const baseStyles = cva({
   base: {
     // border
     borderWidth: '1px',
@@ -22,9 +23,17 @@ const Input = styled('input', {
       outline: 'none',
       boxShadow: 'base',
     },
+
+    _disabled: {
+      backgroundColor: 'stone.100',
+    },
+
+    _placeholder: {
+      color: 'stone.300',
+    },
   },
   variants: {
-    variant: {
+    kind: {
       danger: {
         borderColor: 'base.danger',
         _focus: {
@@ -41,4 +50,7 @@ const Input = styled('input', {
   },
 })
 
-export default Input
+const Input = styled('input', baseStyles)
+const Select = styled('select', baseStyles)
+
+export { Input, Select }

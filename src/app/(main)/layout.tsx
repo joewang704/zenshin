@@ -3,6 +3,13 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 
 import Navbar from './navbar'
+import { styled } from '@styled-system/jsx'
+
+const Container = styled('div', {
+  base: {
+    padding: '24px',
+  },
+})
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +27,9 @@ export default async function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navbar />
-        <main>{children}</main>
+        <main>
+          <Container>{children}</Container>
+        </main>
       </body>
     </html>
   )
