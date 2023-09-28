@@ -1,6 +1,7 @@
+import { cva } from '@styled-system/css'
 import { styled } from '@styled-system/jsx'
 
-const Input = styled('input', {
+const baseStyles = cva({
   base: {
     // border
     borderWidth: '1px',
@@ -49,4 +50,7 @@ const Input = styled('input', {
   },
 })
 
-export default Input
+const Input = styled('input', baseStyles)
+const Select = styled('select', baseStyles)
+
+export { Input, Select }
