@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { styled } from '@styled-system/jsx'
 import { css } from '@styled-system/css'
 
@@ -34,7 +34,7 @@ const Content = styled('div', {
   },
 })
 
-type CardProps = {
+type BaseProps = {
   action?: React.ReactNode
   actionOnClick?: () => void
   title: React.ReactNode
@@ -43,14 +43,14 @@ type CardProps = {
   className?: string
 }
 
-const Card = ({
+const Base = ({
   action,
   actionOnClick,
   title,
   titleOnClick,
   className,
   children,
-}: CardProps) => {
+}: BaseProps) => {
   return (
     <Container className={className}>
       <Header>
@@ -72,21 +72,17 @@ const Card = ({
           {action}
         </div>
       </Header>
-      <Content
-        className={css({
-          display: children ? 'block' : 'none',
-        })}
-      >
-        {children}
-      </Content>
+      {children}
     </Container>
   )
 }
 
-export default Card
+export default Object.assign(Base, {
+  Content,
+})
 
 type CollapsibleCardProps = Omit<
-  CardProps,
+  BaseProps,
   'action' | 'actionOnClick' | 'titleOnClick'
 >
 
@@ -111,11 +107,22 @@ export const CollapsibleCard = ({
   ...props
 }: CollapsibleCardProps) => {
   const [open, setOpen] = useState(false)
+  const contentRef = useRef<any>(null)
 
   const toggle = () => setOpen(!open)
 
+  useEffect(() => {
+    if (contentRef.current) {
+      if (open) {
+        contentRef.current.style.height = contentRef.current.scrollHeight + 'px'
+      } else {
+        contentRef.current.style.height = 0
+      }
+    }
+  }, [open, contentRef.current])
+
   return (
-    <Card
+    <Base
       {...props}
       action={
         <Chevron
@@ -127,7 +134,16 @@ export const CollapsibleCard = ({
       titleOnClick={toggle}
       actionOnClick={toggle}
     >
-      {open && children}
-    </Card>
+      <div
+        className={css({
+          height: 0,
+          overflow: 'hidden',
+          transition: 'height .2s ease-out',
+        })}
+        ref={contentRef}
+      >
+        <Content>{children}</Content>
+      </div>
+    </Base>
   )
 }
