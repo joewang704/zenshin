@@ -18,7 +18,7 @@ export default function Home() {
         actionOnClick={() => {}}
         className={css({ m: 4 })}
       >
-        test
+        <Card.Content>test</Card.Content>
       </Card>
       <Card
         title="Pec deck"
@@ -27,7 +27,7 @@ export default function Home() {
         actionOnClick={() => {}}
         className={css({ m: 4 })}
       >
-        test
+        <Card.Content>test</Card.Content>
       </Card>
     </div>
   )
